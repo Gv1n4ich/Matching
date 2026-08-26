@@ -1,4 +1,4 @@
-package com.match.matching.controller;
+package com.match.matching.common.health;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthController {
     @GetMapping("/api/health")
-    public String health() {
-        return "DevMatch is running!";
+    public HealthResponse health() {
+        return new HealthResponse(
+                "UP",
+                "DevMatch"
+        );
     }
 }
