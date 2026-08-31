@@ -1,0 +1,19 @@
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: devmatch-postgres
+
+    environment:
+      POSTGRES_DB: devmatch
+      POSTGRES_USER: devmatch
+      POSTGRES_PASSWORD: devmatch
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
